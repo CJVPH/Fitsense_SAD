@@ -1,0 +1,240 @@
+/*
+ * FitSense — Light Mode
+ * Activated by adding class="light-mode" to <html>
+ * Palette: warm off-white base, slate text, soft shadows — easy on the eyes.
+ */
+
+/* ── CSS Variables ─────────────────────────────────────────────────────────── */
+html.light-mode {
+    --bg-base:      #f4f4f5;   /* page background */
+    --bg-surface:   #ffffff;   /* cards, panels */
+    --bg-elevated:  #f1f1f3;   /* slightly raised surfaces */
+    --bg-hover:     #e8e8ec;   /* hover state */
+    --bg-active:    #e0e0e8;   /* selected/active state */
+    --text-primary: #18181b;   /* headings, strong text */
+    --text-secondary:#52525b;  /* body text */
+    --text-muted:   #a1a1aa;   /* timestamps, hints */
+    --border:       #d4d4d8;   /* borders */
+    --border-light: #e4e4e7;   /* subtle borders */
+    --accent:       #facc15;   /* yellow stays yellow */
+}
+
+/* ── Base ──────────────────────────────────────────────────────────────────── */
+html.light-mode,
+html.light-mode body {
+    background-color: var(--bg-base) !important;
+    color: var(--text-primary) !important;
+}
+
+/* ── Backgrounds ───────────────────────────────────────────────────────────── */
+html.light-mode [class*="bg-black"] {
+    background-color: var(--bg-surface) !important;
+}
+html.light-mode [class*="bg-zinc-900"] {
+    background-color: var(--bg-surface) !important;
+}
+html.light-mode [class*="bg-zinc-800"] {
+    background-color: var(--bg-elevated) !important;
+}
+html.light-mode [class*="bg-zinc-700"] {
+    background-color: var(--bg-hover) !important;
+}
+html.light-mode [class*="bg-zinc-600"] {
+    background-color: #c4c4cc !important;
+}
+
+/* ── Sidebar & nav ─────────────────────────────────────────────────────────── */
+html.light-mode #sidebar,
+html.light-mode nav,
+html.light-mode header,
+html.light-mode aside {
+    background-color: var(--bg-surface) !important;
+    border-color: var(--border) !important;
+}
+
+/* ── Text ──────────────────────────────────────────────────────────────────── */
+html.light-mode [class*="text-white"],
+html.light-mode [style*="color:#fff"],
+html.light-mode [style*="color: #fff"],
+html.light-mode [style*="color:#ffffff"],
+html.light-mode [style*="color: #ffffff"] {
+    color: var(--text-primary) !important;
+}
+html.light-mode [class*="text-zinc-300"] {
+    color: var(--text-secondary) !important;
+}
+html.light-mode [class*="text-zinc-400"] {
+    color: var(--text-secondary) !important;
+}
+html.light-mode [class*="text-zinc-500"] {
+    color: var(--text-muted) !important;
+}
+html.light-mode [class*="text-zinc-600"] {
+    color: var(--text-muted) !important;
+}
+/* Force all text inside chat bubbles and cards to be readable */
+html.light-mode .bg-zinc-800,
+html.light-mode .bg-zinc-900,
+html.light-mode [class*="rounded-xl"],
+html.light-mode [class*="rounded-2xl"] {
+    color: var(--text-primary) !important;
+}
+html.light-mode p,
+html.light-mode span,
+html.light-mode li,
+html.light-mode div {
+    color: inherit;
+}
+/* AI message bubble text */
+html.light-mode .ai-message,
+html.light-mode .ai-message * {
+    color: var(--text-primary) !important;
+}
+/* Strong/bold inside messages */
+html.light-mode strong {
+    color: var(--text-primary) !important;
+}
+
+/* ── Borders ───────────────────────────────────────────────────────────────── */
+html.light-mode [class*="border-zinc-800"],
+html.light-mode [class*="border-zinc-700"],
+html.light-mode [class*="border-zinc-600"] {
+    border-color: var(--border) !important;
+}
+
+/* ── Inputs ────────────────────────────────────────────────────────────────── */
+html.light-mode input:not([type="radio"]):not([type="checkbox"]):not([type="range"]),
+html.light-mode textarea,
+html.light-mode select {
+    background-color: var(--bg-surface) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border) !important;
+}
+html.light-mode input::placeholder,
+html.light-mode textarea::placeholder {
+    color: var(--text-muted) !important;
+}
+html.light-mode input:focus,
+html.light-mode textarea:focus,
+html.light-mode select:focus {
+    border-color: var(--accent) !important;
+    outline: none !important;
+}
+
+/* ── Chat bubbles ──────────────────────────────────────────────────────────── */
+html.light-mode .bg-zinc-800 {
+    background-color: var(--bg-elevated) !important;
+    color: var(--text-primary) !important;
+}
+
+/* ── Hover states ──────────────────────────────────────────────────────────── */
+html.light-mode [class*="hover:bg-zinc-800"]:hover {
+    background-color: var(--bg-hover) !important;
+}
+html.light-mode [class*="hover:bg-zinc-700"]:hover {
+    background-color: var(--bg-active) !important;
+}
+
+/* ── Session list (Recent Chats) ───────────────────────────────────────────── */
+html.light-mode #session-list button {
+    background-color: transparent !important;
+    color: var(--text-secondary) !important;
+}
+html.light-mode #session-list button:hover {
+    background-color: var(--bg-hover) !important;
+    color: var(--text-primary) !important;
+}
+html.light-mode #session-list button.active-session,
+html.light-mode #session-list button.bg-zinc-800 {
+    background-color: #facc15 !important;
+    color: #000000 !important;
+    border-left: 3px solid #ca8a04 !important;
+}
+html.light-mode #session-list button.active-session p {
+    color: #000000 !important;
+}
+
+/* ── Dropdown menus ────────────────────────────────────────────────────────── */
+html.light-mode #user-menu-dropdown {
+    background-color: var(--bg-surface) !important;
+    border-color: var(--border) !important;
+}
+
+/* ── Cards ─────────────────────────────────────────────────────────────────── */
+html.light-mode [class*="rounded-xl"],
+html.light-mode [class*="rounded-2xl"] {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* ── Scrollbars ────────────────────────────────────────────────────────────── */
+html.light-mode ::-webkit-scrollbar-thumb {
+    background: var(--border) !important;
+}
+html.light-mode ::-webkit-scrollbar-track {
+    background: var(--bg-base) !important;
+}
+
+/* ── Typing indicator ──────────────────────────────────────────────────────── */
+html.light-mode .typing-dot {
+    background: var(--text-muted) !important;
+}
+
+/* ── Toast ─────────────────────────────────────────────────────────────────── */
+html.light-mode #toast {
+    background-color: var(--text-primary) !important;
+    color: #ffffff !important;
+}
+
+/* ── Footer ────────────────────────────────────────────────────────────────── */
+html.light-mode footer {
+    background-color: var(--bg-surface) !important;
+    border-color: var(--border) !important;
+}
+
+/* ── Progress / settings scroll areas ─────────────────────────────────────── */
+html.light-mode #progress-scroll,
+html.light-mode #settings-scroll,
+html.light-mode #trainer-messages {
+    background-color: var(--bg-base) !important;
+}
+
+/* ── Markdown rendered content in light mode ───────────────────────────────── */
+html.light-mode .ai-message p,
+html.light-mode .ai-message li,
+html.light-mode .ai-message span,
+html.light-mode .ai-message div,
+html.light-mode .ai-message strong,
+html.light-mode .ai-message em {
+    color: var(--text-primary) !important;
+}
+html.light-mode .ai-message [style*="color:#fde047"],
+html.light-mode .ai-message [style*="color: #fde047"] {
+    color: #b45309 !important; /* amber for headings in light mode */
+}
+html.light-mode .ai-message hr {
+    border-color: var(--border) !important;
+}
+html.light-mode .ai-message table td,
+html.light-mode .ai-message table th {
+    color: var(--text-primary) !important;
+    border-color: var(--border) !important;
+}
+html.light-mode .ai-message table th {
+    background-color: var(--bg-elevated) !important;
+}
+
+/* ── Markdown table in light mode ──────────────────────────────────────────── */
+html.light-mode table td {
+    border-color: var(--border) !important;
+    color: var(--text-primary) !important;
+}
+html.light-mode table th {
+    background-color: var(--bg-elevated) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border) !important;
+}
+
+/* ── Yellow accent — always stays yellow ───────────────────────────────────── */
+html.light-mode [class*="text-yellow-400"],
+html.light-mode [class*="text-yellow-300"] { /* keep */ }
+html.light-mode [class*="bg-yellow-400"]   { /* keep */ }

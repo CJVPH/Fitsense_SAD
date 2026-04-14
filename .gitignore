@@ -1,0 +1,22 @@
+# Environment / secrets
+.env
+
+# PHP
+*.log
+*.cache
+/vendor/
+composer.lock
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (if used for build tools)
+node_modules/
+npm-debug.log*
+yarn-error.log*
